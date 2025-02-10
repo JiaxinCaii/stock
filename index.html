@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Dashboard</title>
+</head>
+<body>
+    <h1>Real-time Stock Data</h1>
+    <input type="text" id="ticker" placeholder="Enter stock symbol (e.g., AAPL)">
+    <button onclick="fetchStock()">Get Price</button>
+    <p id="price"></p>
+
+    <script>
+        async function fetchStock() {
+            let ticker = document.getElementById("ticker").value || "AAPL";
+            let response = await fetch(`https://your-backend-url/stock?ticker=${ticker}`); // Replace with your backend URL
+            let data = await response.json();
+            document.getElementById("price").innerText = `Stock Price: $${data.price}`;
+        }
+    </script>
+</body>
+</html>
