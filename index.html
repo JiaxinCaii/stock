@@ -1,21 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Stock Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla Stock Analysis</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Real-time Stock Data</h1>
-    <input type="text" id="ticker" placeholder="Enter stock symbol (e.g., AAPL)">
-    <button onclick="fetchStock()">Get Price</button>
-    <p id="price"></p>
-
-    <script>
-        async function fetchStock() {
-            let ticker = document.getElementById("ticker").value || "AAPL";
-            let response = await fetch(`https://your-backend-url/stock?ticker=${ticker}`); // Replace with your backend URL
-            let data = await response.json();
-            document.getElementById("price").innerText = `Stock Price: $${data.price}`;
-        }
-    </script>
+    <header>
+        <h1>Tesla Stock Analysis and Predictions</h1>
+    </header>
+    <main>
+        <section id="stock-data">
+            <h2>Stock Data</h2>
+            <p>Live stock data will appear here.</p>
+        </section>
+        <section id="analysis">
+            <h2>Analysis</h2>
+            <p>Analysis insights will appear here.</p>
+        </section>
+        <section id="prediction">
+            <h2>Prediction</h2>
+            <p>Future stock predictions will be displayed here.</p>
+        </section>
+    </main>
 </body>
 </html>
